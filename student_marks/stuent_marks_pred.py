@@ -43,9 +43,11 @@ correlation['Marks'].sort_values(ascending = False)
 x = data[["time_study", "number_courses"]]
 y = data["Marks"]
 x_train, x_test, y_train, y_test = train_test_split(x, y , test_size = 0.2, random_state = 42)
+
 # Train the model
 model = LinearRegression()
 model.fit(x_train, y_train)
+
 # Test the model
 score = model.score(x_test, y_test)
 # Print the score
@@ -53,6 +55,7 @@ print(score)
 # Print the coefficient and the intercept
 print(model.coef_)
 print(model.intercept_)
+
 # Predict the model
 print(model.predict([[5, 2]]))
 # Save the model
