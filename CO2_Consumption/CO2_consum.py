@@ -78,10 +78,6 @@ print(f"Accurecy: {accuracy_percentage: .2f} %")
 residual = y_test - linear_reg_pred
 print(f'Residuals are : {residual}')
 
-
-
-
-
 # Predict the model using another dataset
 
 test_data = pd.read_csv(r"/co2_consumption/datasets/Percentage of Energy Consumption Global.csv")
@@ -97,7 +93,7 @@ test_data = test_data.rename(columns={'Coal (TWh; direct energy)': 'coal',
                               'Wind (TWh; direct energy)' : 'wind',
                               'Biofuels (TWh; direct energy)' : 'biofuels'})
 
-# test_data.drop(['electricity', 'solar','wind'], axis=1, inplace = True)
+
 test_data = test_data[['Year','coal','Oil','natural_gas']]
 pred = linear_reg.predict(test_data)
 print(pred)
